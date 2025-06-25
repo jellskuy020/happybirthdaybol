@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun, Sayang!</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="bubbleChatContainer"></div>
+  <div class="dekorasi-global">
+    <span class="dekor-emoji anim-bounce" style="left:5vw;top:4vh;">🎈</span>
+    <span class="dekor-emoji anim-spin" style="left:90vw;top:7vh;">🎂</span>
+    <span class="dekor-emoji anim-bounce2" style="left:50vw;top:2vh;">✨</span>
+    <span class="dekor-emoji anim-bounce2" style="left:15vw;top:90vh;">🎉</span>
+    <span class="dekor-emoji anim-bounce" style="left:80vw;top:85vh;">🎁</span>
+    <span class="dekor-emoji anim-bounce2" style="left:60vw;top:95vh;">🧁</span>
+  </div>
+  <canvas id="star-canvas"></canvas>
+  <audio id="bgMusic" autoplay loop>
+    <source src="lagu4.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+  <div class="center-box" id="startBox">
+    <div class="dekorasi-atas">
+      <span class="dekor-emoji anim-bounce">🎈</span>
+      <span class="dekor-emoji anim-spin">🎂</span>
+      <span class="dekor-emoji anim-bounce2">✨</span>
+    </div>
+    <button class="open-btn pulse-anim" id="openBtn">Buka Surprise!</button>
+    <div class="special-text bounce-anim" style="font-size:1.1em;color:#ffb6b9;font-weight:500;">
+      Klik tombol untuk melihat ucapan spesial 🎁
+    </div>
+    <div class="dekorasi-bawah">
+      <span class="dekor-emoji anim-bounce2">🎉</span>
+      <span class="dekor-emoji anim-bounce">🎁</span>
+      <span class="dekor-emoji anim-bounce2">🧁</span>
+    </div>
+  </div>
+  <div class="balloons" id="balloons">
+    <div class="balloon balloon1"><div class="string"></div></div>
+    <div class="balloon balloon2"><div class="string"></div></div>
+    <div class="balloon balloon3"><div class="string"></div></div>
+    <div class="balloon balloon4"><div class="string"></div></div>
+    <div class="balloon balloon5"><div class="string"></div></div>
+  </div>
+  <div class="card" id="birthdayCard">
+    <div class="dekorasi-atas">
+      <span class="dekor-emoji anim-bounce">🎉</span>
+      <span class="dekor-emoji anim-spin">🎂</span>
+      <span class="dekor-emoji anim-bounce2">🎊</span>
+    </div>
+    <div class="love">💖</div>
+    <h1 class="fadein-anim">Selamat Ulang Tahun, Sayang!</h1>
+    <p id="typewriter" class="fadein-anim"></p>
+    <button class="next-btn" id="nextBtn" style="display:none;">Lihat Ucapan Panjang</button>
+    <div class="love">💖</div>
+    <div class="dekorasi-bawah">
+      <span class="dekor-emoji anim-bounce2">🎁</span>
+      <span class="dekor-emoji anim-bounce">✨</span>
+      <span class="dekor-emoji anim-bounce2">🧁</span>
+    </div>
+    <div id="miniConfetti"></div>
+  </div>
+  <div class="long-card" id="longCard">
+    <div class="love">🎂</div>
+    <h1>Ucapan Panjang Untukmu</h1>
+    <p>
+      Selamat ulang tahun ya! Hari ini aku ingin kamu tahu betapa berharganya kamu di hidupku. Semoga setiap langkahmu selalu diberi kemudahan, kesehatan, dan kebahagiaan yang tak pernah habis. Terima kasih sudah jadi teman, sahabat, dan seseorang yang selalu membuat hari-hariku lebih berwarna.<br><br>
+      Aku harap semua impianmu bisa tercapai satu per satu, dan kamu selalu dikelilingi orang-orang yang tulus menyayangimu. Jangan lupa untuk selalu tersenyum dan menikmati setiap momen kecil yang hadir. Makasih udah jadi bagian penting dalam hidupku. Aku selalu doakan yang terbaik untukmu! 🥰
+    </p>
+    <button class="next-btn" id="toPhotoBtn" style="margin-top:16px;">Lihat Kenangan Kita</button>
+    <div class="love">🎉</div>
+  </div>
+  <div class="photo-slide" id="photoSlide">
+    <h1>Kenangan Kita</h1>
+    <div class="photo-gallery">
+      <img src="foto1.jpg" alt="Foto 1" class="gallery-img" data-caption="Ini pertama kali aku di rayain ultahnya sama kamu hahaha">
+      <img src="foto2.jpg" alt="Foto 2" class="gallery-img" data-caption="Waktu pertama kali kamu ketemu cowny,kasian banget cowny gabisa nafas">
+      <img src="foto3.jpg" alt="Foto 3" class="gallery-img" data-caption="foto pertama kali pas kamu sempro dan pertama kali juga aku gift bunga ke perempuan hahaha.">
+      <img src="foto4.jpg" alt="Foto 4" class="gallery-img" data-caption="ini pas kita ke bxsea, ngerencanain ini lama bngt hahaha.">
+      <img src="foto5.jpg" alt="Foto 5" class="gallery-img" data-caption="ini waktu kita pertama kali merakit lego SERUUUU!!, tapi abis itu berantem wkwkw ytta deh.">
+      <img src="foto6.jpg" alt="Foto 6" class="gallery-img" data-caption="WKWK INI LUCU BANGET, LAGI KKN SAKIT TRUS PULANG TRUS BELANJA MALAH NYASAR WKKWWK">
+    </div>
+    <button class="next-btn" id="toLoveSlideBtn" style="margin-top:24px;">Lanjut Kejutan Terakhir</button>
+  </div>
+  <div class="love-slide" id="loveSlide" style="display:none;">
+    <div id="loveRainContainer"></div>
+    <div id="bigLoveContainer" style="display:none;"></div>
+    <button class="next-btn" id="loveAgainBtn" style="display:none;margin-top:32px;">Lagi!</button>
+  </div>
+  <div id="photoPopup" class="photo-popup" style="display:none;">
+  <div class="popup-content">
+    <span id="popupClose" class="popup-close" style="display:none;">&times;</span>
+    <img id="popupImg" src="" alt="Foto" />
+    <div id="popupCaption"></div>
+  </div>
+</div>
+</div>
+  </div>
+  <div class="confetti" id="confetti"></div>
+  <script src="script.js"></script>
+</body>
+</html>
